@@ -16,7 +16,7 @@ export async function POST(req: Request) {
       { status: 401 }
     );
   }
-  const userId = user._id;
+  const userId = user?._id;
   const { acceptmessages } = await req.json();
   try {
     const updateUser = await UserModel.findByIdAndUpdate(
@@ -54,7 +54,7 @@ export async function POST(req: Request) {
     );
   }
 }
-export async function GET(req: Request) {
+export async function GET() {
   await dbConnect();
   const session = await getServerSession(authOptions);
   const user: User = session?.user as User;

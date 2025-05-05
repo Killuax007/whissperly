@@ -41,9 +41,9 @@ export const authOptions: NextAuthOptions = {
           } else {
             throw new Error("password mismatch");
           }
-        } catch (error: any) {
+        } catch (error) {
           console.log(error);
-          throw new Error(error || "Internal server error");
+          throw new Error("Internal server error");
         }
       },
     }),
