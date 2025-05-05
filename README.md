@@ -26,20 +26,20 @@
 
 ## 📁 Project Structure
 
+## 📁 Project Structure
+
+```
 whissperly/
 ├── public/
 ├── src/
-│ ├── app/
-│ ├── components/
-│ ├── lib/
-│ ├── models/
-│ └── styles/
+│   ├── app/
+│   ├── components/
+│   ├── lib/
+│   ├── models/
+│   └── styles/
 ├── .gitignore
 ├── README.md
-├── components.json
-├── eslint.config.mjs
 ├── next.config.ts
-├── package-lock.json
 ├── package.json
-├── postcss.config.mjs
 └── tsconfig.json
+```
