@@ -10,7 +10,7 @@ import { MagicCard } from "@/components/magicui/magic-card";
 import { useTheme } from "next-themes";
 export default function Home() {
   const { status } = useSession();
-  const { theme } = useTheme();
+
   const isUserLoggedIn = status === "authenticated";
   return (
     <>
@@ -44,16 +44,17 @@ export default function Home() {
         <div
           className={`flex md:flex-row  flex-col w-full  md:max-w-5xl gap-5 my-5 ${Poppins_font}`}
         >
-          <CardWrapper content="🔐 Your secrets, sealed tight" theme={theme} />
-          <CardWrapper content="🕵️‍♂️ Anonymity is our promise" theme={theme} />
-          <CardWrapper content="🧠 Share freely, stay unknown" theme={theme} />
+          <CardWrapper content="🔐 Your secrets, sealed tight" />
+          <CardWrapper content="🕵️‍♂️ Anonymity is our promise" />
+          <CardWrapper content="🧠 Share freely, stay unknown" />
         </div>
       </div>
     </>
   );
 }
 
-function CardWrapper({ theme, content }: { theme: string; content: string }) {
+function CardWrapper({ content }: { content: string }) {
+  const { theme } = useTheme();
   return (
     <>
       <Card className="flex mx-auto   justify-center  p-0 max-w-sm w-full shadow-none border-none cursor-pointer ">

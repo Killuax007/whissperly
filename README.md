@@ -27,19 +27,19 @@
 ## 📁 Project Structure
 
 whissperly/
-├── public/ # Static assets (e.g., images, icons)
-├── src/ # Source code directory
-│ ├── app/ # Next.js App Router pages and layouts
-│ ├── components/ # Reusable UI components
-│ ├── lib/ # Utility functions and helpers
-│ ├── models/ # Mongoose models (e.g., User, Message)
-│ └── styles/ # Global and component-specific styles
-├── .gitignore # Specifies files and directories to ignore in Git
-├── README.md # Project documentation
-├── components.json # Component configuration (if applicable)
-├── eslint.config.mjs # ESLint configuration
-├── next.config.ts # Next.js configuration
-├── package-lock.json # Auto-generated lockfile for npm
-├── package.json # Project metadata and dependencies
-├── postcss.config.mjs # PostCSS configuration
-└── tsconfig.json # TypeScript configuration
+├── public/
+├── src/
+│ ├── app/
+│ ├── components/
+│ ├── lib/
+│ ├── models/
+│ └── styles/
+├── .gitignore
+├── README.md
+├── components.json
+├── eslint.config.mjs
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+└── tsconfig.json
