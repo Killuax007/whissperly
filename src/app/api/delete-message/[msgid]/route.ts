@@ -6,13 +6,13 @@ import { getServerSession } from "next-auth/next";
 
 export async function DELETE(
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: { msgid: string } }
 ) {
-  const id = params.id;
+  const msgid = params.msgid;
   await dbConnect();
   const session = await getServerSession(authOptions);
-  const user: User = session?.user as User;
-  if (!session || !session?.user) {
+  const _user: User = session?.user;
+  if (!session || !session?._user) {
     return Response.json(
       {
         success: false,
@@ -24,9 +24,9 @@ export async function DELETE(
   try {
     const updateResults = await UserModel.updateOne(
       {
-        _id: user._id,
+        _id: _user._id,
       },
-      { $pull: { messages: { _id: id } } }
+      { $pull: { messages: { _id: msgid } } }
     );
     if (updateResults.modifiedCount == 0) {
       return Response.json(

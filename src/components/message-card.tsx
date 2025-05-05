@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import axios, { AxiosError } from "axios";
 import dayjs from "dayjs";
-import { Loader2, Trash2, X } from "lucide-react";
+import { Loader2, Trash2 } from "lucide-react";
 import { Message } from "@/models/User";
 import { Card, CardHeader, CardTitle } from "./ui/card";
 import { AlertDialog, AlertDialogTrigger } from "@/components/ui/alert-dialog";

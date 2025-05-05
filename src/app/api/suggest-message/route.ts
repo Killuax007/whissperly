@@ -55,7 +55,7 @@ export async function GET() {
         },
       }
     );
-  } catch (error) {
+  } catch {
     return new Response(
       JSON.stringify({
         success: false,
