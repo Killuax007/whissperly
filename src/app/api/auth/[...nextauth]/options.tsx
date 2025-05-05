@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import dbConnect from "@/lib/dbConnect";
@@ -61,10 +62,10 @@ export const authOptions: NextAuthOptions = {
     },
     async session({ token, session }) {
       if (token) {
-        session.user._id = token._id;
-        session.user.username = token.username;
-        session.user.isVerified = token.isVerified;
-        session.user.isAcceptingMessage = token.isAcceptingMessage;
+        session.user._id = token._id as string;
+        session.user.username = token.username as string;
+        session.user.isVerified = token.isVerified as boolean;
+        session.user.isAcceptingMessage = token.isAcceptingMessage as boolean;
       }
       return session;
     },

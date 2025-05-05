@@ -47,7 +47,7 @@ export default function Dashboard() {
     setIsSwitchLoading(true);
     try {
       const response = await axios.get<ApiRespopnse>("/api/accept-messages");
-      setValue("acceptMessage", response.data.isAcceptingMessage);
+      setValue("acceptMessage", response.data.isAcceptingMessage ?? false);
       toast.success(response.data.message || "Message fetched successfully");
     } catch (error) {
       const axiosError = error as AxiosError<ApiRespopnse>;
@@ -109,6 +109,7 @@ export default function Dashboard() {
   }
 
   const { username } = session.user as User;
+  console.log(session.user);
 
   const baseUrl = `${window.location.protocol}//${window.location.host}`;
   const profileUrl = `${baseUrl}/u/${username}`;

@@ -3,16 +3,17 @@ import UserModel from "@/models/User";
 import { User } from "next-auth";
 import { authOptions } from "../../auth/[...nextauth]/options";
 import { getServerSession } from "next-auth/next";
+import { NextRequest } from "next/server";
 
 export async function DELETE(
-  req: Request,
-  { params }: { params: { msgid: string } }
+  req: NextRequest,
+  { params }: { params: Promise<{ msgid: string }> }
 ) {
-  const msgid = params.msgid;
+  const msgid = (await params).msgid;
   await dbConnect();
   const session = await getServerSession(authOptions);
-  const _user: User = session?.user;
-  if (!session || !session?._user) {
+  const user: User = session?.user as User;
+  if (!session || !session?.user) {
     return Response.json(
       {
         success: false,
@@ -24,7 +25,7 @@ export async function DELETE(
   try {
     const updateResults = await UserModel.updateOne(
       {
-        _id: _user._id,
+        _id: user._id,
       },
       { $pull: { messages: { _id: msgid } } }
     );
