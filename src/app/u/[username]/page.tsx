@@ -7,7 +7,6 @@ import { Loader2, DicesIcon, LinkIcon, Loader } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { CardHeader, CardContent, Card } from "@/components/ui/card";
-import { MagicCard } from "@/components/magicui/magic-card";
 import {
   Form,
   FormControl,
