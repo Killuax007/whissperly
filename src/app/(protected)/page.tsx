@@ -17,7 +17,7 @@ export default function Home() {
       <main className=" flex justify-center  h-[60vh] max-sm:h-[42vh]  space-y-4 ">
         <section className="flex flex-col justify-center items-center   ">
           <h2
-            className={`text-2xl font-semibold md:text-6xl ${Chigero_font} mb-4`}
+            className={`text-4xl md:mx-0  mx-6  md:text-6xl ${Chigero_font} mb-4`}
           >
             Join us to the world of Whisspering...{" "}
           </h2>
@@ -42,7 +42,7 @@ export default function Home() {
           Fast reply ... Fast Response
         </h2>
         <div
-          className={`flex md:flex-row  flex-col w-full  md:max-w-5xl gap-5 my-5 ${Poppins_font}`}
+          className={`flex md:flex-row  flex-col w-full   md:max-w-5xl gap-5 my-5 ${Poppins_font}`}
         >
           <CardWrapper content="🔐 Your secrets, sealed tight" />
           <CardWrapper content="🕵️‍♂️ Anonymity is our promise" />
@@ -57,12 +57,12 @@ function CardWrapper({ content }: { content: string }) {
   const { theme } = useTheme();
   return (
     <>
-      <Card className="flex mx-auto   justify-center  p-0 max-w-sm w-full shadow-none border-none cursor-pointer ">
+      <Card className="flex mx-10 md:mx-0  justify-center md:w-full p-0 max-w-sm  shadow-none border-none cursor-pointer  ">
         <MagicCard
           gradientColor={theme === "dark" ? "#262626" : "#D9D9D955"}
           className="p-0 min-h-[10rem]"
         >
-          <CardHeader className="text-2xl  justify-center my-15 ">
+          <CardHeader className="md:text-2xl  justify-center my-15 ">
             {content}
           </CardHeader>
         </MagicCard>
